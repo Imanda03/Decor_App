@@ -1,0 +1,43 @@
+.login{
+    background-image: url('https://images.pexels.com/photos/6812375/pexels-photo-6812375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+.wrapper{
+    box-shadow: 0px 0px 10px #406fb2b3;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.548) 40%, rgb(255, 253, 253,0.5) 100%);
+}
+.top .icon {
+    color: white; 
+    font-size: 3rem;
+  }
+.inputbox input{
+    background-color: transparent;
+}
+.inputbox input::placeholder {
+    color: transparent;
+}
+.inputbox input:focus ~ span,
+.inputbox input:not(:placeholder-shown) ~ span {
+    transform: translateX(0px) translateY(-18px);
+    padding: 0px 2px;
+    transition: 0.5s;
+    font-size: 0.9rem;
+    color:darkslateblue;
+}
+.inputbox input:not(:focus):placeholder-shown ~ span {
+    transform: translateX(0) translateY(0);
+    padding: 0;
+    transition: 0.5s;
+}
+.inputbox input:focus ~ img{
+    transform: translateX(20px);
+    transition: 0.5s;
+}
+.form button{
+    font-family: 'Inknut Antiqua';
+}
+.right .title{
+    font-family: 'Inknut Antiqua';
+}
+.right .icon {
+    font-size: 3rem;
+  }
