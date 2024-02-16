@@ -1,5 +1,6 @@
 .register{
     background-image: url('https://images.pexels.com/photos/6812375/pexels-photo-6812375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
 }
 .inputbox .emailicon{
     font-size: 1.1rem;
