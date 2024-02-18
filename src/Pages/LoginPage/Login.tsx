@@ -6,12 +6,12 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import LoginIcon from '@mui/icons-material/Login';
 
 interface Credential {
-  username: string;
+  email: string;
   password: string;
 }
 const Login: React.FC = () => {
 
-  const [credential, setCredential] = useState<Credential>({ username: '', password: '' });
+  const [credential, setCredential] = useState<Credential>({ email: '', password: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCredential(prevInfo => ({ ...prevInfo, [e.target.name]: e.target.value }));
@@ -32,8 +32,8 @@ const Login: React.FC = () => {
           <div className="form">
             <form onSubmit={handleSubmit} className='flex flex-col mt-4 font-bold relative text-xs md:text-base'>
               <div className="inputbox relative my-6">
-                <input type='text' name="username" onChange={handleChange} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='username' />
-                <span className='absolute left-0 px-2'>Username</span>
+                <input type='text' name="email" onChange={handleChange} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='email' />
+                <span className='absolute left-0 px-2'>email</span>
                 <img src={userImage} className='w-5 absolute right-7 top-1' />
               </div>
 

@@ -7,6 +7,7 @@ import Register from './Pages/RegisterPage/Register';
 import Shop from './Pages/ShopPage/Shop';
 import About from './Pages/AboutPage/About';
 import './style.css';
+import CategoryPage from './Pages/CategoryPage/CategoryPage'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/register' element={<Register/>} />
         <Route path='/shop' element={<Shop/>} />
         <Route path='/about' element={<About/>} />
+        <Route path='/category/:categoryid' element={<CategoryPage/>}/>
 
 
       </Routes>
