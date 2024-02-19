@@ -24,14 +24,6 @@ export const categories = [
   ] },
 ];
 
-  // export const products = [
-  //   { id: 1, name: 'Chair', category: 'Furniture' },
-  //   { id: 2, name: 'Table', category: 'Furniture' },
-  //   { id: 3, name: 'Curtains', category: 'Home Textiles' },
-  //   { id: 4, name: 'Painting', category: 'Wall Decor' },
-  //   { id: 5, name: 'Lamp', category: 'Lighting' },
-  //   { id: 6, name: 'Vase', category: 'Decoration' },
-    
-  // ];
+ 
 
   

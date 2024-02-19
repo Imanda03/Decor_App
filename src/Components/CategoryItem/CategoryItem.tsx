@@ -6,13 +6,11 @@ import LightIcon from '@mui/icons-material/Light';
 import RiceBowlIcon from '@mui/icons-material/RiceBowl';
 import { Link } from 'react-router-dom';
 
-interface category{
-   item: {
-    id:number;
-    name:string;
-}}
+interface catitem{
+   item:String;
+  }
 
-const CategoryItem:React.FC<category> = ({item}) => {
+const CategoryItem:React.FC<catitem> = ({item}) => {
     
     interface CategoryIcons {
         [key: string]: JSX.Element;
@@ -29,22 +27,21 @@ const CategoryItem:React.FC<category> = ({item}) => {
 
   return (
     <div className=''>
-        <Link to={`/category/${item.id}`}>
+        <Link to={`/category/${item}`}>
             <div className="cat flex flex-1 hover:bg-red-400 flex-col items-center justify-center space-y-1 md:space-y-4 p-1 md:p-7">
               {/* <ChairOutlinedIcon className='caticon'/> */}
               <div className="icon ">
-              {React.cloneElement(categoryIcons[item.name], { className: 'caticon' })}
-
+              {/* {React.cloneElement(categoryIcons[item], { className: 'caticon' })} */}
               </div>
 
-              <div className="furni">{item.name}</div>
+              <div className="furni">{item}</div>
             </div>
             </Link>
     </div>
   )
 }
 
-export default CategoryItem
+export default CategoryItem;
 
 
 

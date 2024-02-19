@@ -33,7 +33,7 @@ const Login: React.FC = () => {
             <form onSubmit={handleSubmit} className='flex flex-col mt-4 font-bold relative text-xs md:text-base'>
               <div className="inputbox relative my-6">
                 <input type='text' name="email" onChange={handleChange} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='email' />
-                <span className='absolute left-0 px-2'>email</span>
+                <span className='absolute left-0 px-2'>Email</span>
                 <img src={userImage} className='w-5 absolute right-7 top-1' />
               </div>
 

@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CategoryItem from '../CategoryItem/CategoryItem';
-import { categories } from '../../data';
+import axios from 'axios';
 
-const Category = () => {
+const Category= () => {
+
+  const[categories,setCategories]=useState<string[]>([]);
+
+  const getCategory=()=>{
+    axios.get(`https://dummyjson.com/products/categories`)
+    .then(resp=>{setCategories(resp.data)
+      // console.log(categories);
+      ;
+    })
+    .catch(err=>console.error(err));
+  }
+ 
+  useEffect(()=>{
+    getCategory();
+  },[]);
+
+  const desiredCategories=["furniture","skincare","fragrances","lighting","home-decoration"];
+  const filtercategory=categories.filter(cat=>desiredCategories.includes(cat.toLowerCase()));
 
   return (
     <div>
@@ -10,8 +28,8 @@ const Category = () => {
           <div className="catlist flex w-3/4 justify-center items-center bg-red-300">
 
         {
-            categories.map((item)=>(
-                <div key={item.id} className='w-full' >
+            filtercategory.map((item,index)=>(
+                <div key={index} className='w-full' >
                      <CategoryItem item={item}/>
                 </div>
             ))

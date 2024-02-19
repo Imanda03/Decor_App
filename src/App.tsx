@@ -8,6 +8,7 @@ import Shop from './Pages/ShopPage/Shop';
 import About from './Pages/AboutPage/About';
 import './style.css';
 import CategoryPage from './Pages/CategoryPage/CategoryPage'
+import ProductPage from './Pages/ProductPage/ProductPage'
 
 function App() {
 
@@ -20,7 +21,10 @@ function App() {
         <Route path='/register' element={<Register/>} />
         <Route path='/shop' element={<Shop/>} />
         <Route path='/about' element={<About/>} />
-        <Route path='/category/:categoryid' element={<CategoryPage/>}/>
+        <Route path='/category/:categoryname' element={<CategoryPage/>}/>
+        {/* <Route path='/category/:categoryname/product/:productid' element={<ProductPage/>}/> */}
+        <Route path='/product/:productid' element={<ProductPage/>}/>
+
 
 
       </Routes>
