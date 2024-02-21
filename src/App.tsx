@@ -9,6 +9,9 @@ import About from './Pages/AboutPage/About';
 import './style.css';
 import CategoryPage from './Pages/CategoryPage/CategoryPage'
 import ProductPage from './Pages/ProductPage/ProductPage'
+import "antd/dist/reset.css";
+import CartPage from './Pages/CartPage/CartPage'
+// import "antd/dist/antd.css";
 
 function App() {
 
@@ -24,6 +27,8 @@ function App() {
         <Route path='/category/:categoryname' element={<CategoryPage/>}/>
         {/* <Route path='/category/:categoryname/product/:productid' element={<ProductPage/>}/> */}
         <Route path='/product/:productid' element={<ProductPage/>}/>
+        <Route path='/cart' element={<CartPage/>}/>
+
 
 
 

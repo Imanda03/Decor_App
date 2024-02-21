@@ -30,9 +30,9 @@ const Header = () => {
                 </div>
                : null}
               </div>
-              <div className="right flex-1 flex justify-end items-center">
+              <Link to='/cart'><div className="right flex-1 flex justify-end items-center">
                 <ShoppingBagIcon className='mr-4 md:mr-20'/>
-              </div>
+              </div></Link>
             </div>
           </div>
   )

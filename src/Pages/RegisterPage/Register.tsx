@@ -4,6 +4,8 @@ import keyImage from '../../assets/key.png'; // Adjust the path based on your di
 import userImage from '../../assets/user.png'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import EmailIcon from '@mui/icons-material/Email';
+import InputBox from '../../ReuseComponent/InputBox';
+import { Input } from 'antd';
 
 interface Info {
   firstname: string;
@@ -52,7 +54,7 @@ const Register: React.FC = () => {
             <form onSubmit={handleSubmit} className='flex mt-4 font-bold relative text-xs md:text-[1rem] md:flex-row flex-wrap justify-around items-center'>
               <div className="w-[40%]">
                 <div className="inputbox relative my-2 md:my-4">
-                  <input type='text' name="firstname" onChange={handleChange} value={info.firstname} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='phone' />
+                  <InputBox type='text' name="firstname" onChange={handleChange} value={info.firstname} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='phone' />
                   <span className='absolute left-0 px-2'>First name</span>
                   <img src={userImage} className='md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1' />
                   {renderErr('First name',info.firstname)}
@@ -62,7 +64,7 @@ const Register: React.FC = () => {
 
               <div className="w-[40%]">
                 <div className="inputbox relative my-2 md:my-4">
-                  <input type='text' name="lastname" onChange={handleChange} value={info.lastname} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='phone' />
+                  <InputBox type='text'name="lastname" onChange={handleChange} value={info.lastname} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='phone' />
                   <span className='absolute left-0 px-2'>Last name</span>
                   <img src={userImage} className='md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1' />
                 {renderErr('Last name',info.lastname)}
@@ -71,7 +73,7 @@ const Register: React.FC = () => {
               </div>
               <div className="w-[40%] ">
                 <div className="inputbox relative my-2 md:my-4 ">
-                  <input type='text' name="phone" onChange={handleChange} value={info.phone} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='phone' />
+                  <InputBox type='text'name="phone" onChange={handleChange} value={info.phone} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='phone' />
                   <span className='absolute left-0 px-2'>Phone</span>
                   <img src={userImage} className='md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1' />
                 {renderErr('phone',info.phone)}
@@ -80,7 +82,8 @@ const Register: React.FC = () => {
 
               <div className="w-[40%] ">
                 <div className="inputbox relative my-2 md:my-4 ">
-                  <input type='text' name="address" onChange={handleChange} value={info.address} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='address' />
+                  <InputBox type='text'
+ name="address" onChange={handleChange} value={info.address} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='address' />
                   <span className='absolute left-0 px-2'>Address</span>
                   <img src={userImage} className='md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1' />
                 {renderErr('address',info.address)}
@@ -89,7 +92,7 @@ const Register: React.FC = () => {
 
               <div className="w-[40%] ">
                 <div className="inputbox relative my-2 md:my-4">
-                  <input type='text' name="email" onChange={handleChange} value={info.email} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='phone' />
+                  <InputBox type='text'name="email" onChange={handleChange} value={info.email} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='phone' />
                   <span className='absolute left-0 px-2'>Email</span>
                   <EmailIcon className='emailicon md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1' />
                 {renderErr('Email',info.email)}
@@ -98,7 +101,7 @@ const Register: React.FC = () => {
               </div>
               <div className="w-[40%]">
                 <div className="inputbox relative my-2 md:my-4 ">
-                  <input type='password' name="password" onChange={handleChange} value={info.password} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='password' />
+                  <InputBox type='password' name="password" onChange={handleChange} value={info.password} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='password' />
                   <span className='absolute left-0 py-4 px-2'>Password</span>
                   <img src={keyImage} className='md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1 bg-transparent' />
                 {renderErr('Password',info.password)}
@@ -106,7 +109,7 @@ const Register: React.FC = () => {
               </div>
               <div className="w-[40%] mr-[50%]">
                 <div className="inputbox relative my-2 md:my-4 ">
-                  <input type='password' name="confirmpassword" onChange={handleChange} value={info.confirmpassword}  className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='password' />
+                  <InputBox type='password' name="confirmpassword" onChange={handleChange} value={info.confirmpassword}  className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='password' />
                   <span className='absolute left-0 py-4 px-2'>ConfirmPassword</span>
                   <img src={keyImage} className='md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1 bg-transparent' />
                    <p className='pass text-[0.5rem] md:text-[0.6rem] text-red-700'>{passwordErr? 'Password didnot match' : null}</p>
