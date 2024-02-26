@@ -15,7 +15,7 @@ const CategoryPage = () => {
   const getProductList=()=>{
     axios.get(`https://dummyjson.com/products/category/${categoryname}`)
     .then(resp=>{setData(resp.data.products)
-    console.log(resp.data.products);
+    // console.log(resp.data.products);
     })
     .catch(err=>console.error(err));
   }

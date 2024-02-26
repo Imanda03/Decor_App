@@ -5,9 +5,10 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { PlusOutlined } from '@ant-design/icons';
 import { MinusOutlined } from '@ant-design/icons/lib/icons';
-import {useDispatch} from 'react-redux'
-import { addCart } from '../../store/slice/CartSlice';
+import {useDispatch, useSelector} from 'react-redux'
+import { addCart,increaseQuantity } from '../../store/slice/CartSlice';
 import { singleProduct } from '../../interface';
+import { RootState } from '../../store/store';
 
 const ProductPage = () => {
 
@@ -16,9 +17,11 @@ const ProductPage = () => {
   const [data, setData] = useState<singleProduct | ''>('');
   const[hoverImage,setHoverImage]=useState<string>('');
 
+  const item=useSelector((state:RootState)=>state.carts.items);
   const dispatch=useDispatch();
 
   const addToCart=()=>{
+  //  console.log(data);
     dispatch(addCart(data));
   }
 
@@ -27,6 +30,10 @@ const ProductPage = () => {
     .then(resp=>{setData(resp.data)
     })
     .catch(err=>console.error(err));
+  }
+
+  const increaseToQuantity=(id:number)=>{
+    dispatch(increaseQuantity(id));
   }
 
   useEffect(()=>{
@@ -79,8 +86,8 @@ const ProductPage = () => {
               <div className="quantity flex space-x-3 items-center">
                 Quantity:
                 <div className="flex items-center ml-2"> <MinusOutlined /></div>
-                <div className="flex items-center ml-2">1</div>
-               <div className="flex items-center ml-2"> <PlusOutlined /></div>        
+                <div className="flex items-center ml-2"></div>
+               <div className="flex items-center ml-2"> <PlusOutlined onClick={()=>increaseToQuantity(data.id)}/></div>        
               </div>
 
               <div className="btn mt-2 space-x-8">
@@ -92,7 +99,9 @@ const ProductPage = () => {
      
           </div>
                 )}
+
            </div>
+        
     </div>
     <Footer />
   </div>  )

@@ -11,4 +11,5 @@ export interface singleProduct {
     thumbnail?: string;          
     images?: string[];
     quantity?: number;
+    totalproducts?:number;
 }
