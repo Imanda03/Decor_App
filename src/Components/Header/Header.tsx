@@ -9,7 +9,7 @@ import { AppBar, Container, Box, Toolbar, IconButton, Typography, Menu, Avatar, 
 const pages = ['Home', 'Shop'];
 const settings = ['Profile', 'Logout'];
 
-const Header = (isLogin: boolean) => {
+const Header = (isLogin: any) => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorUser] = useState<null | HTMLElement>(null);
 
@@ -94,6 +94,7 @@ const Header = (isLogin: boolean) => {
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -152,35 +153,47 @@ const Header = (isLogin: boolean) => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings" onClick={handleOpenUserMenu}>
-              <IconButton sx={{ p: 0 }}>
-                <Avatar alt="Anish" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+          {
+            isLogin ? (
+              <Box sx={{ display: 'flex', gap: 2 }}>
+                <Link to='/login'>
+                  <Button variant='outlined' color='inherit' >Login</Button>
+                </Link>
+                <Link to='/register'>
+                  <Button variant='outlined' color='inherit' >Register</Button>
+                </Link>
+              </Box>
+            ) : (
+              <Box sx={{ flexGrow: 0 }}>
+                <Tooltip title="Open settings" onClick={handleOpenUserMenu}>
+                  <IconButton sx={{ p: 0 }}>
+                    <Avatar alt="Anish" src="/static/images/avatar/2.jpg" />
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: '45px' }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  {settings.map((setting) => (
+                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                      <Typography textAlign="center">{setting}</Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+            )}
         </Toolbar>
       </Container>
     </AppBar>
