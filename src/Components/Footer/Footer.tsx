@@ -8,9 +8,8 @@ import { Box, Container, Divider, Grid, Typography, Stack } from '@mui/material'
 const Footer = () => {
   return (
     <>
-      <footer>
-        <Box>
-          <Container sx={{ backgroundColor: '#7F5539'}}>
+        <Box sx={{ width: '100%', backgroundColor: '#7F5539'}}>
+          <Container>
             <Grid container color='#E2E8F0' padding={4}>
               <Grid item xs={3}>
                 <Box>
@@ -91,7 +90,6 @@ const Footer = () => {
             </Grid>
           </Container>
         </Box>
-      </footer>
     </>
 
 

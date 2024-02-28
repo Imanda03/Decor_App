@@ -30,6 +30,7 @@ const Shop = () => {
       <div className="wr">
       {/* <input type='text' placeholder='Search products' onChange={handleonChange} className='ml-8 border border-gray-300'/>
       <SearchIcon className='icon ml-6' onClick={()=>handleSearch(searchQuery)}/> */}
+      HEllo This is shop page..
       </div>
     </div>
   )
