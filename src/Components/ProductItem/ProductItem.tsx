@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom';
+import { singleProduct } from '../../interface';;
 
 interface product{
-     item:{ id:number;
-      title:string;
-      price:string;
-      thumbnail:string;}
-    }
+  item:singleProduct;
+}
 
 const ProductItem:React.FC<product> = ({item}) => {
   const {categoryname}=useParams();

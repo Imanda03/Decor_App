@@ -2,27 +2,20 @@ import React,{useEffect, useState} from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import Category from '../../Components/Categories/Category';
-import { categories } from '../../data';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ProductItem from '../../Components/ProductItem/ProductItem';
-
-interface ProductData {
-  id: number;
-  title: string;
-  price: string;
-  thumbnail:string;//product is an array
-}
+import { singleProduct } from '../../interface';
 
 const CategoryPage = () => {
   const {categoryname}=useParams();
   
-  const[data,setData]=useState<ProductData[]>([]);
+  const[data,setData]=useState<singleProduct[]>([]);
 
   const getProductList=()=>{
     axios.get(`https://dummyjson.com/products/category/${categoryname}`)
     .then(resp=>{setData(resp.data.products)
-    console.log(resp.data.products);
+    // console.log(resp.data.products);
     })
     .catch(err=>console.error(err));
   }

@@ -3,19 +3,12 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
-interface singleProduct{
-  id:number;
-  title:string;
-  description:string;
-  price:string;
-  discountPercentage:number;
-  rating:number;
-  stock:number;
-  brand:string;
-  thumbnail:string;
-  images:string[];
-}
+import { PlusOutlined } from '@ant-design/icons';
+import { MinusOutlined } from '@ant-design/icons/lib/icons';
+import {useDispatch, useSelector} from 'react-redux'
+import { addCart,increaseQuantity } from '../../store/slice/CartSlice';
+import { singleProduct } from '../../interface';
+import { RootState } from '../../store/store';
 
 const ProductPage = () => {
 
@@ -24,11 +17,23 @@ const ProductPage = () => {
   const [data, setData] = useState<singleProduct | ''>('');
   const[hoverImage,setHoverImage]=useState<string>('');
 
+  const item=useSelector((state:RootState)=>state.carts.items);
+  const dispatch=useDispatch();
+
+  const addToCart=()=>{
+  //  console.log(data);
+    dispatch(addCart(data));
+  }
+
   const getProduct=()=>{
     axios.get(`https://dummyjson.com/product/${productid}`)
     .then(resp=>{setData(resp.data)
     })
     .catch(err=>console.error(err));
+  }
+
+  const increaseToQuantity=(id:number)=>{
+    dispatch(increaseQuantity(id));
   }
 
   useEffect(()=>{
@@ -49,14 +54,17 @@ const ProductPage = () => {
               </div>
               
                   <div className="images flex space-x-3">
-                    {data.images.map((item) => (
-                      <div className="div" key={item}>
-                        <img src={item} className='border h-full w-full hover:border-custom-brown-800'
-                        onMouseEnter={()=>setHoverImage(item)}
-                        onMouseLeave={()=>setHoverImage('')}
-                         />
-                      </div>
-                    ))}
+                  {data.images && data.images.map((item) => (
+                    <div className="div" key={item}>
+                      <img
+                        src={item}
+                        className='border h-full w-full hover:border-custom-brown-800'
+                        onMouseEnter={() => setHoverImage(item)}
+                        onMouseLeave={() => setHoverImage('')}
+                      />
+                    </div>
+                  ))}
+
                   </div>
              </div>
              <div className="info flex-1 space-y-4">
@@ -75,16 +83,25 @@ const ProductPage = () => {
               <div className="description">{data.description}</div>
               <div className="stock">Stock: {data.stock}</div>
 
+              <div className="quantity flex space-x-3 items-center">
+                Quantity:
+                <div className="flex items-center ml-2"> <MinusOutlined /></div>
+                <div className="flex items-center ml-2"></div>
+               <div className="flex items-center ml-2"> <PlusOutlined onClick={()=>increaseToQuantity(data.id)}/></div>        
+              </div>
+
               <div className="btn mt-2 space-x-8">
               <button className='bg-custom-brown-800 text-white p-3'>Buy Now</button>
-              <button className='bg-orange-500 text-white p-3'>Add to Cart</button>
+              <button className='bg-orange-500 text-white p-3' onClick={addToCart}>Add to Cart</button>
 
              </div>
              </div>
      
           </div>
                 )}
+
            </div>
+        
     </div>
     <Footer />
   </div>  )
