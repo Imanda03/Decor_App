@@ -26,16 +26,46 @@ const Category = () => {
     getCategory();
   }, []);
 
-  const categoryIcons: { [key: string]: JSX.Element } = {
-    'furniture': <ChairIcon />,
-    'skincare': <SpaIcon />,
-    'fragrances': <AcUnitIcon />,
-    'lighting': <LightIcon />,
-    'home-decoration': <DeckIcon />,
-  };
+  // const categoryIcons: { [key: string]: JSX.Element } = {
+  //   'furniture': <ChairIcon />,
+  //   'skincare': <SpaIcon />,
+  //   'fragrances': <AcUnitIcon />,
+  //   'lighting': <LightIcon />,
+  //   'home-decoration': <DeckIcon />,
+  // };
 
-  const desiredCategories = ["furniture", "skincare", "fragrances", "lighting", "home-decoration"];
-  const filtercategory = categories.filter(cat => desiredCategories.includes(cat.toLowerCase()));
+  // const desiredCategories = ["furniture", "skincare", "fragrances", "lighting", "home-decoration"];
+  const desiredCategories = [
+    {
+
+      'furniture': {
+        "name": "furniture",
+        "icon": <ChairIcon />
+      },
+      'skincare': {
+        "name": "skincare",
+        "icon": <SpaIcon />
+      },
+      'fragrances': {
+        "name": "fragrances",
+        "icon": <AcUnitIcon />
+      },
+      'lighting': {
+        "name": "lighting",
+        "icon": <LightIcon />
+      },
+      'home-decoration': {
+        "name": "home-decoration",
+        "icon": <DeckIcon />
+      }
+    } 
+  ]
+
+desiredCategories.map((items:any)  => {
+  Object.keys(items).forEach((key:any) => {
+    console.log(items[key].name)
+  })
+} )
 
   return (
     <div>
@@ -44,13 +74,18 @@ const Category = () => {
           <Grid container spacing={3} justifyContent='center'>
             <Grid item sm={12} md={10}>
               <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: '#DDB892',p:1}}>
-                {
-                  filtercategory.map((item, index) => (
-                <Box key={index} sx={{width:'100%'}} >
-                      <CategoryItem item={item} icon={categoryIcons[item.toLowerCase()]} />
+              {
+                desiredCategories.map((items:any, index:number) => (
+                  Object.keys(items).map((key:any) => (
+                    <Box key={index} sx={{ width: '100%' }} >
+                      <CategoryItem
+                        item={items[key].name}
+                        icon={items[key].icon}
+                      />
                     </Box>
                   ))
-                }
+                ))
+              }
               </Box>
             </Grid>
           </Grid>
