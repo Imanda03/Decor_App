@@ -6,23 +6,24 @@ import LightIcon from '@mui/icons-material/Light';
 import RiceBowlIcon from '@mui/icons-material/RiceBowl';
 import { Link } from 'react-router-dom';
 
-interface catitem{
-   item:String;
-  }
+interface catitem {
+  item: string;
+  icon: JSX.Element;
+}
 
-const CategoryItem:React.FC<catitem> = ({item}) => {
+const CategoryItem:React.FC<catitem> = ({item,icon}) => {
     
     interface CategoryIcons {
         [key: string]: JSX.Element;
       }
       
-      const categoryIcons: CategoryIcons = {
-        'Furniture': <ChairOutlinedIcon />,
-        'Textiles': <AirlineSeatIndividualSuiteIcon />,
-        'Wall Decor': <InsertPhotoIcon />,
-        'Lighting': <LightIcon />,
-        'Decoration': <RiceBowlIcon />,
-      };
+      // const categoryIcons: CategoryIcons = {
+      //   'Furniture': <ChairOutlinedIcon />,
+      //   'Textiles': <AirlineSeatIndividualSuiteIcon />,
+      //   'Wall Decor': <InsertPhotoIcon />,
+      //   'Lighting': <LightIcon />,
+      //   'Decoration': <RiceBowlIcon />,
+      // };
       
 
   return (
@@ -31,7 +32,7 @@ const CategoryItem:React.FC<catitem> = ({item}) => {
             <div className="cat flex flex-1 hover:bg-red-400 flex-col items-center justify-center space-y-1 md:space-y-4 p-1 md:p-7">
               {/* <ChairOutlinedIcon className='caticon'/> */}
               <div className="icon ">
-              {/* {React.cloneElement(categoryIcons[item], { className: 'caticon' })} */}
+              {React.cloneElement(icon, { className: 'caticon' })}
               </div>
 
               <div className="furni">{item}</div>
