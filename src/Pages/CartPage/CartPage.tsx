@@ -5,8 +5,8 @@ import Footer from '../../Components/Footer/Footer';
 import Header from '../../Components/Header/Header';
 import { PlusOutlined } from '@ant-design/icons';
 import { MinusOutlined } from '@ant-design/icons/lib/icons';
-import { increaseQuantity, removeCart, decreaseQuantity } from '../../store/slice/CartSlice';
-import { RootState } from '../../store/store';
+import { increaseQuantity, removeCart, decreaseQuantity } from '../../Services/store/slice/CartSlice';
+import { RootState } from '../../Services/store/store';
 import { Link } from 'react-router-dom';
 
 const CartPage = () => {
@@ -28,7 +28,7 @@ const CartPage = () => {
 
   return (
     <div>
-        <Header/>
+        <Header isLogin/>
         <div className='wraps flex space-x-4'>
       <div className="wrap my-[4%] " style={{'flex':3}}>
       {data && data.map((item)=> ( 

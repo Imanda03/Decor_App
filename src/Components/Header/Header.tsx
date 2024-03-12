@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '../../Services/store/store';
 import { Badge } from '@mui/material';
 import axios from 'axios';
 import EventSeatIcon from '@mui/icons-material/EventSeat';

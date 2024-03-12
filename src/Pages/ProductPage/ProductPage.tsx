@@ -6,9 +6,9 @@ import { useParams } from 'react-router-dom';
 import { PlusOutlined } from '@ant-design/icons';
 import { MinusOutlined } from '@ant-design/icons/lib/icons';
 import {useDispatch, useSelector} from 'react-redux'
-import { addCart,increaseQuantity } from '../../store/slice/CartSlice';
+import { addCart,increaseQuantity } from '../../Services/store/slice/CartSlice';
 import { singleProduct } from '../../interface';
-import { RootState } from '../../store/store';
+import { RootState } from '../../Services/store/store';
 
 const ProductPage = () => {
 
@@ -42,7 +42,7 @@ const ProductPage = () => {
 
   return (
     <div className='w-100vw'>
-    <Header />
+    <Header isLogin/>
     <div className='wraps'>
       <div className="wrap my-[4%]">
       {data && (

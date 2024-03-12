@@ -2,9 +2,9 @@ import React from 'react'
 
 interface inputProps{
     placeholder:string;
-    type: 'text' | 'number' | 'email' | 'password' | 'checkbox'
+    type: string
     name?:string;
-    value?:any;
+    value?:string | number;
     onChange?:(e:React.ChangeEvent<HTMLInputElement>)=>void;
     className?:string;
     checked?:boolean;

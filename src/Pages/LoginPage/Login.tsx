@@ -4,7 +4,7 @@ import keyImage from '../../assets/key.png'; // Adjust the path based on your di
 import userImage from '../../assets/user.png'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import LoginIcon from '@mui/icons-material/Login';
-import InputBox from '../../ReuseComponent/InputBox';
+import InputBox from '../../Core/Components/InputBox';
 
 interface Credential {
   email: string;

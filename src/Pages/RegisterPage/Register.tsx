@@ -4,7 +4,7 @@ import keyImage from '../../assets/key.png'; // Adjust the path based on your di
 import userImage from '../../assets/user.png'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import EmailIcon from '@mui/icons-material/Email';
-import InputBox from '../../ReuseComponent/InputBox';
+import InputBox from '../../Core/Components/InputBox';
 import { Input } from 'antd';
 
 interface Info {
