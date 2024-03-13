@@ -1,0 +1,45 @@
+.not-found-container {
+    text-align: center;
+    margin-top: 10vh; /* Adjust margin from top to be a percentage of viewport height */
+  }
+  
+  .not-found-container h1 {
+    font-size: 4vw; /* Use viewport width unit for font size */
+    color: #ff5470;
+  }
+  
+  .not-found-container p {
+    font-size: 2vw; /* Use viewport width unit for font size */
+    margin-top: 2vh; /* Adjust margin from top to be a percentage of viewport height */
+  }
+  .back-to-home-link {
+    display: inline-block;
+    margin-top: 3vh; /* Adjust margin from top to be a percentage of viewport height */
+    padding: 2vh 10%; /* Use percentage-based padding */
+    background-color: #00ebc7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.5vw; /* Use viewport width unit for border-radius */
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-to-home-link:hover {
+    background-color: #00d4b3;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .back-to-home-link {
+      padding: 3vh 10%; /* Adjust padding for smaller screens */
+      border-radius: 1vw; /* Increase border-radius for smaller screens */
+    }
+  
+    .not-found-container p {
+      font-size: 3vw; /* Increase font size for smaller screens */
+    }
+  
+    .back-to-home-link {
+      padding: 3vh 6vw; /* Increase padding for smaller screens */
+      border-radius: 1vw; /* Increase border-radius for smaller screens */
+    }
+  }
+  
