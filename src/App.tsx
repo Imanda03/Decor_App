@@ -12,6 +12,7 @@ import ProductPage from './Pages/ProductPage/ProductPage'
 import CartPage from './Pages/CartPage/CartPage'
 import CheckoutPage from './Pages/CheckoutPage/CheckoutPage'
 import NotFound from './Components/NotFound/NotFound'
+import LoginPage from './Pages/LoginPage/LoginPage'
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Homepage/>}/>
-        <Route path='/login' element={<Login/>} />
+        <Route path='/login' element={<LoginPage/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='/shop' element={<Shop/>} />
         <Route path='/about' element={<About/>} />
