@@ -5,7 +5,8 @@ import userImage from '../../assets/user.png'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import EmailIcon from '@mui/icons-material/Email';
 import InputBox from '../../Core/Components/InputBox';
-import { Input } from 'antd';
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 interface Info {
   firstname: string;
@@ -44,6 +45,12 @@ const Register: React.FC = () => {
   }
 
   return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { delay: 0.2 } }}
+    >
+
     <div className='register w-full md:w-screen h-screen flex items-center justify-center bg-custom-blue-400 '>
       <div className="wrapper flex flex-col md:flex-row rounded-xl border border-blue-700 w-full md:w-[80%] lg:w-[60%] xl:w-[45%]] mx-4 md:mx-0 relative">
         <div className="top bg-slate-500 absolute md:w-24 md:h-24 w-16 h-16 rounded-full left-0 right-0 m-auto flex justify-center items-center -top-6 md:-top-12">
@@ -118,6 +125,12 @@ const Register: React.FC = () => {
               </div>
 
               <button className='bg-custom-brown-600 hover:bg-custom-brown-500 text-black font-bold p-2 w-[82%] m-auto rounded-2xl'>Register</button>
+              <div className="signup text-blue-900 mt-4 text-sm flex justify-center">
+                Already have account?
+                <Link to='/login'>
+                  <span className='ml-1'> Sign up</span>
+                </Link>
+              </div>
 
             </form>
           </div>
@@ -129,6 +142,7 @@ const Register: React.FC = () => {
         </div>
       </div>
     </div>
+    </motion.div>
 
   )
 }
