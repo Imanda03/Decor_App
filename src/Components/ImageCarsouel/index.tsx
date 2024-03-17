@@ -36,7 +36,7 @@ const ImageCarousel = ({ images }: any) => {
   }, [currentIndex]); // Depend on currentIndex to restart the timer when the index changes
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container ">
       <motion.img
         key={currentIndex}
         src={images[currentIndex]}

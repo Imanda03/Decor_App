@@ -10,14 +10,14 @@ interface InputInterface {
     isPassword?: boolean,
     value?: any,
     name: string,
-    onChnageText?: (value: any) => void,
+    onChange?: (value: any) => void,
     style?: any,
     type?: any,
     variant?: TextFieldVariants,
     props?: any
 }
 
-const AInput: React.FC<InputInterface> = ({ label, helperText, isPassword, value, name, onChnageText, style, type, variant, ...props }) => {
+const AInput: React.FC<InputInterface> = ({ label, helperText, isPassword, value, name, onChange, style, type, variant, ...props }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const classes = styles()
@@ -35,7 +35,7 @@ const AInput: React.FC<InputInterface> = ({ label, helperText, isPassword, value
                     label={label}
                     style={style}
                     className={classes.inputbox}
-                    onChange={onChnageText}
+                    onChange={onChange}
                     variant={variant}
                     value={value}
                     {...props}
@@ -62,7 +62,7 @@ const AInput: React.FC<InputInterface> = ({ label, helperText, isPassword, value
                         name={name}
                         style={style}
                         className={classes.inputbox}
-                        onChange={onChnageText}
+                        onChange={onChange}
                         variant={variant}
                         value={value}
                         {...props}

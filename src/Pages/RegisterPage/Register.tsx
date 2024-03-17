@@ -7,7 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import InputBox from '../../Core/Components/InputBox';
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from 'react-router-dom';
-
+import AInput from '../../Core/Input';
 interface Info {
   firstname: string;
   lastname: string;
@@ -109,6 +109,15 @@ const Register: React.FC = () => {
               <div className="w-[40%]">
                 <div className="inputbox relative my-2 md:my-4 ">
                   <InputBox type='password' name="password" onChange={handleChange} value={info.password} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='password' />
+                  <span className='absolute left-0 py-4 px-2'>Password</span>
+                  <img src={keyImage} className='md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1 bg-transparent' />
+                {renderErr('Password',info.password)}
+                </div>
+              </div>
+              {/* trying */}
+              <div className="w-[40%]">
+                <div className="inputbox relative my-2 md:my-4 ">
+                  <AInput type='password' name="password" onChange={handleChange} isPassword={true} value={info.password} className='p-1 border-b border-blue-700 w-full focus:border-blue-700 outline-none' placeholder='password' />
                   <span className='absolute left-0 py-4 px-2'>Password</span>
                   <img src={keyImage} className='md:w-5 w-4 absolute right-1 md:right-4 top-1 md:-top-1 bg-transparent' />
                 {renderErr('Password',info.password)}

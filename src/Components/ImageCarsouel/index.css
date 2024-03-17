@@ -3,6 +3,7 @@
     overflow: hidden;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
   }
   
   .carousel-image {
@@ -34,7 +35,7 @@
   
   .carousel-controls {
     position: absolute;
-    bottom: 10px; /* Adjust distance from bottom as needed */
+    bottom: 10%; /* Adjust distance from bottom as needed */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
