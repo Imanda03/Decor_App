@@ -6,5 +6,10 @@ export const styles = makeStyles({
     },
     inputbox: {
         width: '100%',
+        border:'1px solid-blue',
+        outline:'none',
+        '&:focus': { // Use &:focus to specify focus styles
+            borderColor: 'blue', // Specify the color without hyphen
+        },
     }
 })
