@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Box, TextField, InputAdornment, IconButton, TextFieldVariants } from '@mui/material';
+import { Box, TextField, InputAdornment, IconButton, TextFieldVariants, TextFieldProps } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { styles } from './styles';
+import { useStyles } from './styles';
 
 interface InputInterface {
     label?: string,
@@ -17,10 +17,10 @@ interface InputInterface {
     props?: any
 }
 
-const AInput: React.FC<InputInterface> = ({ label, helperText, isPassword, value, name, onChange, style, type, variant, ...props }) => {
+const AInput: React.FC<TextFieldProps & InputInterface> = ({ label, isPassword, value, name, onChange, style, type, variant, ...props }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-    const classes = styles()
+    const classes = useStyles()
 
     const handleIconClick = () => {
         setIsPasswordVisible((show) => !show);
@@ -31,7 +31,6 @@ const AInput: React.FC<InputInterface> = ({ label, helperText, isPassword, value
             {isPassword ?
                 <TextField
                     type={isPasswordVisible ? 'text' : 'password'}
-                    helperText={helperText}
                     label={label}
                     style={style}
                     className={classes.inputbox}
@@ -57,7 +56,6 @@ const AInput: React.FC<InputInterface> = ({ label, helperText, isPassword, value
                 : (
                     <TextField
                         type={type}
-                        helperText={helperText}
                         label={label}
                         name={name}
                         style={style}

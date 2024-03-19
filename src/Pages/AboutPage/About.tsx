@@ -77,7 +77,7 @@ const About = () => {
           {/* <button onClick={handleFormSubmit}>Submit</button> */}
           <AButton title='Submit Form' onClick={handleFormSubmit} variant='contained' />
           <ATitle title='Main Body' varaiant='body2' />
-          <AButton title='Button1' variant='contained'/>
+          <AButton title='Button1' variant='contained' />
           <AButton title='Button2' variant='contained'/>
         </FormControl>
         <ImageMotion/>

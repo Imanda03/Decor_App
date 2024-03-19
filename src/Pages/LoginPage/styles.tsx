@@ -1,23 +1,38 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from '@mui/styles';
 
 export const styles = makeStyles({
-    container: {
-        marginTop: "50px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: 'center'
+    main: {
+        backgroundImage: "url('https://images.pexels.com/photos/6812375/pexels-photo-6812375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+        backgroundSize: "cover",
+        minHeight: "100vh",
+    },
+    secondContainer: {
+        padding: "30px",
+        zIndex: "1",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     avatarContainer: {
-        marginTop: "10px",
-        backgroundColor: 'blue'
+        margin: "10px auto",
     },
-    signButton: {
-        marginTop: 3,
-        marginBottom: 2
+    FormContainer: {
+        width: '100%', // Ensure the form takes full width
+        marginTop: '20px',
+        marginBottom: '20px',
     },
-    gridContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px'
+    paper: {
+        marginTop: "60px",
+        padding: "40px",
+        borderRadius: '10px', // Rounded corners
+        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', // Soft shadow effect
+        background: "grey",
+    },
+    link: {
+        textDecoration: 'none',
+        color: '#333', // Dark grey text color
+    },
+    btn:{
+        backgroundColor: "black"
     }
-})
+});

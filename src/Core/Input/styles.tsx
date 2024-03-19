@@ -1,15 +1,28 @@
-import { makeStyles } from "@mui/styles";
+import { createStyles, makeStyles } from "@mui/styles";
 
-export const styles = makeStyles({
-    container:{
-        marginTop: 10
+export const useStyles = makeStyles((theme) => 
+    createStyles({
+        container:{
+    marginTop: 10
     },
     inputbox: {
         width: '100%',
-        border:'1px solid-blue',
+        border:'1px solid green',
         outline:'none',
         '&:focus': { // Use &:focus to specify focus styles
-            borderColor: 'blue', // Specify the color without hyphen
+            borderColor: 'green', // Specify the color without hyphen
         },
     }
-})
+    })
+)
+// container:{
+//     marginTop: 10
+// },
+// inputbox: {
+//     width: '100%',
+//     border:'1px solid green',
+//     outline:'none',
+//     '&:focus': { // Use &:focus to specify focus styles
+//         borderColor: 'green', // Specify the color without hyphen
+//     },
+// }
