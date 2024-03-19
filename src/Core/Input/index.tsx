@@ -8,7 +8,7 @@ interface InputInterface {
     label?: string,
     helperText?: string,
     isPassword?: boolean,
-    value?: any,
+    value?: string | [string],
     name: string,
     onChange?: (value: any) => void,
     style?: any,
