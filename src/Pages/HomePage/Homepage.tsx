@@ -20,7 +20,7 @@ import { ImageMotion } from '../../Components/ImageMotion/Index';
 const Homepage = () => {
   return (
     <div className='w-100vw'>
-      <Header isLogin={true} />
+      <Header isLogin={false} />
       <div className='wrap'>
         <div className="wra">
           <div className="img h-[45vh] md:h-[88vh]">

@@ -1,16 +1,14 @@
-import { Button, Box} from "@mui/material";
+import { Button, Box, ButtonProps} from "@mui/material";
 import {styles} from './styles'
 
 interface ButtonInterface {
     title: string;
     onClick?: (value: any) => void;
     variant?: "text" | "outlined" | "contained";
-    style?: any,
     others?: any
 }
 
-const AButton = ({title, onClick, variant, ...others}: ButtonInterface) => {
-    //this call the styles components
+const AButton: React.FC<ButtonProps & ButtonInterface> = ({title, onClick, variant, ...others}) => {
     const classes = styles();
     
     return(

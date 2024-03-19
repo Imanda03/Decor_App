@@ -2,7 +2,7 @@ import { makeStyles } from "@mui/styles";
 
 export const styles = makeStyles({
     imageContainer: {
-        width: "100vw",
+        width: "95vw",
         height: "80vh",
         position: "relative",
         display: "flex",

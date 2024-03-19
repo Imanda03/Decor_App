@@ -48,7 +48,7 @@ const Register: React.FC = () => {
     <motion.div
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 0.2 } }}
+      animate={{ opacity: 1, }}
     >
 
     <div className='register w-full md:w-screen h-screen flex items-center justify-center bg-custom-blue-400 '>

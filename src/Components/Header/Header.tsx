@@ -120,7 +120,7 @@ const Header = ({ isLogin }: headerInterface) => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link to={page.toLowerCase()}>
+              <Link to={"/"+page.toLowerCase()}>
                 <Button
                   key={page}
                   onClick={handleCloseUserMenu}
@@ -139,7 +139,7 @@ const Header = ({ isLogin }: headerInterface) => {
           </Box>
 
           {
-            isLogin ? (
+            !isLogin ? (
               <Box sx={{ display: 'flex', gap: 2 }}>
                 <Link to='/login'>
                   <Button variant='outlined' color='inherit' >Login</Button>
