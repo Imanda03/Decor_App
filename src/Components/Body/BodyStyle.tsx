@@ -111,6 +111,7 @@ export const BodyStyle=makeStyles({
         height:'80%',
         borderRadius: '7rem !important' ,
     },
+    
 
      '@media (max-width:600px)':{
         leftimagecontainer:{

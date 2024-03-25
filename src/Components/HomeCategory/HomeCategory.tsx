@@ -9,7 +9,7 @@ const HomeCategory = () => {
   const classes = HomeCategoryStyle();
 
   return (
-    <Box >
+    <Box>
       <Box sx={{ mb: 7 }} className={classes.container}>
 
         <Typography variant="h4" color='brown' gutterBottom >

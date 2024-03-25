@@ -8,7 +8,7 @@ import axios from 'axios';
 import EventSeatIcon from '@mui/icons-material/EventSeat';
 import { AppBar, Container, Box, Toolbar, IconButton, Typography, Menu, Avatar, Button, Tooltip, MenuItem } from "@mui/material"
 
-const pages = ['Home', 'Shop'];
+const pages = ['Home', 'About'];
 const settings = ['Profile', 'Logout'];
 
 interface headerInterface {
@@ -35,7 +35,7 @@ const Header = ({ isLogin }: headerInterface) => {
     setAnchorUser(null);
   };
 
-  const data=useSelector((state:RootState)=>state.carts.count);
+  const data = useSelector((state: RootState) => state.carts.count);
 
   return (
 
@@ -120,7 +120,7 @@ const Header = ({ isLogin }: headerInterface) => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link to={"/"+page.toLowerCase()}>
+              <Link to={"/" + page.toLowerCase()}>
                 <Button
                   key={page}
                   onClick={handleCloseUserMenu}
@@ -131,10 +131,18 @@ const Header = ({ isLogin }: headerInterface) => {
               </Link>
             ))}
 
+            <Link to='/category/fragrances'>
+              <Button
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Shop
+              </Button>
+            </Link>
+
             <Link to='/cart'><div className="right flex-1 flex justify-end items-center mt-5">
               <Badge badgeContent={data} color="primary" className='mr-4 md:mr-20'>
-              <ShoppingBagIcon className=''/>
-                </Badge>
+                <ShoppingBagIcon className='' />
+              </Badge>
             </div></Link>
           </Box>
 
