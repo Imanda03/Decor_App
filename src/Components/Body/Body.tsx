@@ -46,7 +46,7 @@ const Body = () => {
           </Grid>
           <Grid item xs={6} className={classes.right}>
             <Box className={classes.imagecontainer}>
-              <iframe src="https://www.youtube.com/embed/ScIUtfZC3sc" frameborder="0" allowfullscreen className={classes.img}></iframe>
+              <iframe src="https://www.youtube.com/embed/ScIUtfZC3sc" frameBorder="0" allowFullScreen className={classes.img}></iframe>
             </Box>
           </Grid>
         </Grid>
@@ -72,10 +72,8 @@ const Body = () => {
                   <Box>
                   <Typography variant="subtitle2" color='black' gutterBottom className={classes.text}>
                   {item.description}
-                  </Typography>
-                  
-                  </Box>
-                 
+                  </Typography>              
+                  </Box>               
                 </Box>
               </Box>
             </Grid>
